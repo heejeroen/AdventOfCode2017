@@ -14,7 +14,7 @@ public class Day02 {
     }
 
     private static int calculateChecksum(ToIntFunction<String[]> calculateLineTotal) throws IOException {
-        return Arrays.stream(readLines("day02.txt"))
+        return readLines("day02.txt").stream()
                 .map(line -> line.split("\t"))
                 .mapToInt(calculateLineTotal)
                 .sum();

@@ -3,7 +3,7 @@ package nl.jeroennijs.adventofcode2017;
 import java.io.IOException;
 import java.util.function.BiFunction;
 
-import static nl.jeroennijs.adventofcode2017.Utils.readLines;
+import static nl.jeroennijs.adventofcode2017.Utils.readLinesAsArray;
 
 
 
@@ -15,7 +15,7 @@ public class Day01 {
 
     private static long calculateTotal(BiFunction<Integer, Integer, Integer> nextIndex) throws IOException {
         long total = 0L;
-        final String line = readLines("day01.txt")[0];
+        final String line = readLinesAsArray("day01.txt")[0];
         final int length = line.length();
         for (int i = 0; i < length; i++) {
             if (line.charAt(i) == line.charAt(nextIndex.apply(i, length)))

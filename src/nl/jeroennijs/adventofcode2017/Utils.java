@@ -4,15 +4,20 @@ import javax.xml.bind.DatatypeConverter;
 import java.io.*;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 import java.util.stream.Collectors;
 
 
 
 class Utils {
-    static String[] readLines(final String fileName) throws IOException {
+    static List<String> readLines(final String fileName) throws IOException {
         try (BufferedReader reader = new BufferedReader(new FileReader("src/nl/jeroennijs/adventofcode2017/input/" + fileName))) {
-            return reader.lines().collect(Collectors.toList()).toArray(new String[0]);
+            return reader.lines().collect(Collectors.toList());
         }
+    }
+
+    static String[] readLinesAsArray(final String fileName) throws IOException {
+        return readLines(fileName).toArray(new String[0]);
     }
 
     static MessageDigest getMd5Digest() {
