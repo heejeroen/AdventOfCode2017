@@ -41,7 +41,7 @@ public class Day10 {
         return result;
     }
 
-    private static class Rope {
+    static class Rope {
         int[] segments;
         int index = 0;
         int skip = 0;
