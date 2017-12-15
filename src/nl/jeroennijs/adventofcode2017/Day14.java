@@ -23,12 +23,11 @@ public class Day14 {
 
     private static int countGroups(List<String> grid) {
         int[][] groupGrid = createGroupGrid(grid);
-        deduplicate(groupGrid);
-        int count = countGroups(groupGrid);
-        return count;
+        connect(groupGrid);
+        return countGroups(groupGrid);
     }
 
-    private static void deduplicate(int[][] grid) {
+    private static void connect(int[][] grid) {
         for (int y = 0; y < GRIDSIZE; y++) {
             for (int x = 0; x < GRIDSIZE; x++) {
                 if (x > 0) {
